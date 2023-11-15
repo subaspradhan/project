@@ -7,6 +7,9 @@ const mysql = require('mysql');
 const { error } = require('console');
 const port = process.env.PORT | 5004;
 
+const cors = require('cors');
+app.use(cors({ origin: 'https://your-vercel-app.vercel.app' }));
+
 app.use(express.static('frontend'));
 app.get('/',(req,res)=>{
     res.sendFile(__dirname + "index.html");
