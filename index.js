@@ -23,10 +23,23 @@ var con = mysql.createConnection({
     database:'demo'
 
 });
+// const con = mysql.createConnection({
+//     host: process.env.localhost,
+//     user: process.env.root,
+//     password: process.env,
+//     database: process.env.demo,
+//   });
 con.connect(function(err){
    if(err) throw error;
    console.log("connected successfully!");
 })
+// con.connect((err) => {
+//     if (err) {
+//       console.error('MySQL connection error:', err);
+//     } else {
+//       console.log('Connected to MySQL database');
+//     }
+//   });
 
 
 const storage = multer.memoryStorage();
