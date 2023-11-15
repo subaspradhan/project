@@ -5,7 +5,7 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended:true})); 
 const mysql = require('mysql');
 const { error } = require('console');
-const port = 5004;
+const port = process.env.PORT | 5004;
 
 app.use(express.static('frontend'));
 app.get('/',(req,res)=>{
